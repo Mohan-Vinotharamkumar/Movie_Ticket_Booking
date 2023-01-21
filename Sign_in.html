@@ -1,0 +1,89 @@
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="Sign_in.css">
+    </head>
+    <body>
+        <div class="container">
+            <section>
+                <div class="custom-shape-divider-top-1673245083">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                        <path d="M602.45,3.86h0S572.9,116.24,281.94,120H923C632,116.24,602.45,3.86,602.45,3.86Z" class="shape-fill"></path>
+                    </svg>
+                </div>
+            </section>
+            
+        </div>
+        <div class="cont">
+            <div class="div">
+                <h1 align="center" style="font-family: Gabriola;letter-spacing: 3px;">SIGN-IN HERE TO DIVE - IN</h1>
+                <div class="div-1">
+                    <img src="Theatre-2.jpg" alt="Welcome image" class="img">
+                </div>
+                <div class="div-2">
+                    <h2 align="center" style="font-style:oblique;">Please Put up Your Login Details !</h2>
+                    <div class="input">
+                        <form action="Movies.html" id="myForm">
+                        <input type="text" name="text" placeholder="Username" required class="input-box" id="username">
+                        <input type="password" name="password" placeholder="Password" required class="input-box" id="password">
+                        <input type="submit" class="submit" onclick="callmovie()">
+                        </form>
+                    </div>
+                    <br><br><br><br>
+                    <a href="Home_Page.html" class="back" style="font-style: italic;">BACK TO HOME</a>
+                </div>
+            </div>
+        </div>
+        <footer>
+
+        </footer>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+        <script>
+            
+            function callmovie()
+            {
+                var name = document.getElementById('username').value.toUpperCase();
+                var password =document.getElementById('password').value;
+                if (name!="" && password !="")
+                {
+                    window.location.replace="Home.html";
+                    
+                }
+                else{
+                    alert('field is empty');
+                }
+                sessionStorage.setItem("name", name);
+                
+            }
+            document.getElementById('myForm').reset();
+
+            const firebaseConfig = {
+            apiKey: "AIzaSyBiF0mQ-__No9AijI5_re8EBtVx1RD-KnY",
+            authDomain: "movie-ticket-booking-sys-f72bb.firebaseapp.com",
+            databaseURL: "https://movie-ticket-booking-sys-f72bb-default-rtdb.firebaseio.com",
+            projectId: "movie-ticket-booking-sys-f72bb",
+            storageBucket: "movie-ticket-booking-sys-f72bb.appspot.com",
+            messagingSenderId: "417739684097",
+            appId: "1:417739684097:web:e87484aaaba586e3c58300"
+            };
+
+            firebase.initializeApp(firebaseConfig);
+            var Sign_in_Data = firebase.database().ref("sign_up_form");
+
+            Sign_in_Data.once("value", function(snapshot)
+            {
+                var data = snapshot.val();
+                for(let i in data)
+                {
+                    console.log(data[i]);
+                }
+            })
+
+
+        </script>
+    </body>
+    </html>

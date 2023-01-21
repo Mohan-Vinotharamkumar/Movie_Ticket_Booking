@@ -1,0 +1,145 @@
+#navbar
+{
+    height: 5rem;
+    width: 100%;
+    background-color: darkblue;
+    display: flex;
+}
+.frst-ul
+{
+    margin-left: 45%;
+    line-height: 2.5rem;
+}
+.frst-li
+{
+    display: inline-block;
+    
+}
+.frst-a
+{
+    color: white;
+    margin-left: 3rem;
+    list-style: none;
+    text-decoration: none;
+}
+.video_container
+{
+    height: 500px;
+    width: 99%;
+    /* background-color: antiquewhite; */
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    
+}
+.video
+{
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+.sub-cont
+{
+    height: 100vh;
+    width: 100%;
+    /* background-color: beige; */
+    margin-top: 26%;
+    display: flex;
+}
+.sub-cont-1
+{
+    height: 700px;
+    width: 55%;
+    /* background-color: yellow; */
+    padding: 2rem 5rem;
+}
+.sub-cont-2
+{
+    height: 500px;
+    width: 30%;
+    /* background-color: violet; */
+    margin-left: 2%;
+    margin-top: 7.5%;
+}
+#ticket_count
+{
+    height: 3rem;
+    width: 65%;
+    margin-top: 30%;
+    background-color: transparent;
+    margin-left: 5%;
+    border: none;
+    outline: 0;
+    border-bottom: 2px solid white;
+    /* padding-left: 30%; */
+    font-size: 1.2rem;
+}
+#ticket_count::placeholder
+{
+    padding-left: 15%;
+}
+.cont-btn
+{
+    height: 2rem;
+    width: 35%;
+    margin-top: 10%;
+    margin-left: 10%;
+    cursor: pointer;
+}
+.incrs
+{
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+.dcrs
+{
+    height: 2rem;
+    width: 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+#bill
+{
+    display: none;
+    height: 100px;
+    width: 55%;
+    background-color: yellowgreen;
+    margin-left: 5%;
+    padding: 3rem 5rem;
+    margin-top: 5%;
+    letter-spacing: 2PX;
+}
+footer
+{
+    height: 100px;
+    width: 100%;
+    background-color: darkblue;
+}
+.cast
+{
+    font-family: papyrus;
+}
+#print
+{
+    height: 4rem;
+    width: 50%; 
+    display: none;
+    margin-top: 5%;
+    margin-left: 25%;
+    /* display: flex; */
+}
+.btn_print
+{
+    margin: auto;
+    height: 2rem;
+    cursor: pointer;
+    width: 60%;
+    font-family: Avanta Garde;
+}

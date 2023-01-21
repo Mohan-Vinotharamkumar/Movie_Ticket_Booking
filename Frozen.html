@@ -1,0 +1,118 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FROZEN </title>
+    <link rel="stylesheet" href="spider.css">
+</head>
+<body>
+    <div id="navbar">
+        <h1 style="line-height: 2.5rem;color: white;margin-left: 5%;float: left;">Movie Universe</h1>
+        <ul class="frst-ul">
+            <li class="frst-li"><a  class="frst-a" onclick="callHome()" style="cursor: pointer;">HOME</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">ABOUT</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">CONTACT</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">HELP</a></li>
+        </ul>
+    </div>
+    <div style="height: 180vh;width: 100%;background-color: #8D9EFF;display: flex;">
+       
+            <div class="video_container">
+                <video class="video" autoplay loop >
+                    <source src="frozen.mp4" type="video/mp4">
+                </video>
+            </div>
+            <br>
+            <div class="sub-cont">
+                <div class="sub-cont-1">
+                    <h1 style="font-family: papyrus;letter-spacing: 2px;">FROZEN</h1>
+                    <br>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">DESCRIPTION :</span>
+                    <br>
+                    <p style="font-family: papyrus;">
+                        Frozen tells the story of Princess Anna as she teams up with an iceman, his reindeer, and a snowman to find her estranged sister Elsa, whose icy powers have inadvertently trapped their kingdom in eternal winter. Frozen underwent several story treatments before being commissioned in 2011 as a screenplay by Lee.                    </p>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">Release date:</span><p style="font-family: papyrus;">6 December 2013 (UK)</p>
+                    <br>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">Director: </span>Chris Buck, Jennifer Lee
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">Production companies:</span> <p  style="font-family: papyrus;"> Marvel Studios, Columbia Pictures, Pascal Pictures</p>
+                    <br>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">CAST :</span>
+                    <br>
+                    <p >
+                        <li class="cast">Kristen Bell	...	Anna (voice)</li> <br><li class="cast">Idina Menzel	...	Elsa (voice)</li> <br><li class="cast">Jonathan Groff	...	Kristoff (voice)</li> <br><li class="cast">Alan Tudyk	...	Duke (voice) </li><br><li class="cast">Eva Bella	...	Young Elsa (voice) </li>
+                    </p>
+                </div>
+                <div class="sub-cont-2">
+                    <button class="incrs" onclick="incrment()">+</button>
+                    <input type="number" name="number" id="ticket_count" placeholder="Enter Number of Ticktes">
+                    <button class="dcrs" onclick="decrment()">-</button>
+                    <button class="cont-btn" onclick="bookshow()">BOOK MY SHOW</button>
+                    <button class="cont-btn" onclick="cancelshow()">CANCEL MY SHOW</button>
+                    <br>
+                    <div id="bill"></div>
+
+                    <div id="print">
+                        <button onclick="print_ticket('bill')" class="btn_print">PRINT TICKET</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <footer>
+
+    </footer>
+
+
+    <script>
+        function callHome()
+        {
+            window.location.href="Movies.html";
+        }
+        function incrment()
+        {
+            document.getElementById("ticket_count").stepUp();
+        }
+        function decrment()
+        {
+            document.getElementById("ticket_count").stepDown();
+        }
+        function bookshow()
+        {
+            var a = document.getElementById("ticket_count").value;
+            if(a<1)
+            {
+                alert("PLEASE SELECT VALID NUMBER OF TICKETS.")
+            }
+            else{
+                var b = 100;
+                var c = 18/100;
+                var d = ((a*b)*c)*10;
+                var result = d.toFixed(2);
+                // alert("Your ticket rate"+" "+result);
+                document.getElementById("bill").style.display="block";
+                document.getElementById("print").style.display="block";
+                document.getElementById("bill").innerHTML="YOUR TICKET COUNT :"+" "+a+"<br>"+"GST PRICE :"+" "+c+"<br>"+"TICKET RATE :"+" "+result;
+                document.getElementById("ticket_count").value=" ";
+            } 
+        }
+        function cancelshow()
+        {
+            document.getElementById("bill").style.display="none";
+            document.getElementById("print").style.display="none";
+        }
+        function print_ticket(divName)
+        {
+            var printContents = document.getElementById(divName).innerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = printContents;
+
+			window.print();
+
+			document.body.innerHTML = originalContents;
+            // window.print();
+        }
+    </script>
+
+</body>
+</html>

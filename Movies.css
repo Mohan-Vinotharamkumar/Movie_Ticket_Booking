@@ -1,0 +1,121 @@
+#navbar
+{
+    height: 5rem;
+    width: 100%;
+    background-color: darkblue;
+    display: flex;
+}
+.frst-ul
+{
+    margin-left: 45%;
+    line-height: 2.5rem;
+}
+.frst-li
+{
+    display: inline-block;
+    
+}
+.frst-a
+{
+    color: white;
+    margin-left: 3rem;
+    list-style: none;
+    text-decoration: none;
+}
+.container
+{
+    height: 250vh;
+    width: 100%;
+    background-color: darkblue;
+}
+#greetings
+{
+    font-size: 2rem;
+    margin-left: 25%;
+    font-family: Georgia;
+    letter-spacing: 2px;
+    color: white;
+}
+.image
+{
+    /* background-color: antiquewhite; */
+    height: 400px;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+}
+.image__img
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem 1rem;
+}
+.image__overlay
+{
+    position: absolute;
+    top: 0 ;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,0.9);
+    color: white;
+    font-family: Gabriola;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s;
+    border-radius: 1rem 1rem;
+}
+.image__overlay:hover
+{
+    opacity: 1;
+}
+.image__title
+{
+    font-size: 1.2rem;
+}
+.image__description
+{
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+}
+.image__btn
+{
+    cursor: pointer;
+    margin-left: 30%;
+    margin-top: 5%;
+    padding: 1rem;
+}
+.image__btn:hover
+{
+    background-color: orange;
+    color: white;
+}
+.img-1-slid
+{
+    height: 400px;
+    width: 800px;
+}
+#search
+{
+    margin-left: 25%;
+    margin-top: 5%; 
+    width: 45%;
+    height: 4rem;
+    background: transparent;
+    outline: 0;
+    border: none; 
+    border-bottom: 1px solid gray;
+    font-size: 1.2rem;
+    color: white;
+    padding-left: 15%;
+}
+#search::placeholder
+{
+    color: white;
+    opacity: 0.6;
+}

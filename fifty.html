@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFTY SHADES OF GREY</title>
+    <link rel="stylesheet" href="spider.css">
+</head>
+<body>
+    <div id="navbar">
+        <h1 style="line-height: 2.5rem;color: white;margin-left: 5%;float: left;">Movie Universe</h1>
+        <ul class="frst-ul">
+            <li class="frst-li"><a  class="frst-a" onclick="callHome()" style="cursor: pointer;">HOME</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">ABOUT</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">CONTACT</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">HELP</a></li>
+        </ul>
+    </div>
+    <div style="height: 180vh;width: 100%;background-color: #8D9EFF;display: flex;">
+       
+            <div class="video_container">
+                <video class="video" autoplay loop >
+                    <source src="fifty.mp4" type="video/mp4">
+                </video>
+            </div>
+            <br>
+            <div class="sub-cont">
+                <div class="sub-cont-1">
+                    <h1 style="font-family: papyrus;letter-spacing: 2px;">FIFTY SHADES OF GREY</h1>
+                    <br>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">DESCRIPTION :</span>
+                    <br>
+                    <p style="font-family: papyrus;">
+                        Fifty Shades is a British-American film trilogy series based on the Fifty Shades trilogy by English author E. L. James. It is distributed by Universal Studios and stars Dakota Johnson and Jamie Dornan as the lead roles Anastasia Steele and Christian Grey, respectively.                     </p>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">Release date:</span><p style="font-family: papyrus;">	
+                        February 9, 2015 (Los Angeles)</p>
+                    <br>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">Director: </span>James Foley, Sam Taylor-Johnson
+                    <br><br>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">Production companies:</span> <p  style="font-family: papyrus;">  Perfect World Pictures, Focus Features, Trigger Street Productions, Michael De Luca</p>
+                    <br>
+                    <span style="font-size: 1.2rem;font-weight: bolder;font-family: papyrus;letter-spacing: 2px;">CAST :</span>
+                    <br>
+                    <p >
+                        <li class="cast">Dakota Johnson	...	Anastasia Steele</li> <br><li class="cast">Jamie Dornan	...	Christian Grey</li> <br><li class="cast">Jennifer Ehle	...	Carla</li> <br><li class="cast">Eloise Mumford	...	Kate </li><br><li class="cast">Marcia Gay Harden	...	Dr. Grey </li>
+                    </p>
+                </div>
+                <div class="sub-cont-2">
+                    <button class="incrs" onclick="incrment()">+</button>
+                    <input type="number" name="number" id="ticket_count" placeholder="Enter Number of Ticktes">
+                    <button class="dcrs" onclick="decrment()">-</button>
+                    <button class="cont-btn" onclick="bookshow()">BOOK MY SHOW</button>
+                    <button class="cont-btn" onclick="cancelshow()">CANCEL MY SHOW</button>
+                    <br>
+                    <div id="bill"></div>
+
+                    <div id="print">
+                        <button onclick="print_ticket('bill')" class="btn_print">PRINT TICKET</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <footer>
+
+    </footer>
+
+
+    <script>
+        function callHome()
+        {
+            window.location.href="Movies.html";
+        }
+        function incrment()
+        {
+            document.getElementById("ticket_count").stepUp();
+        }
+        function decrment()
+        {
+            document.getElementById("ticket_count").stepDown();
+        }
+        function bookshow()
+        {
+            var a = document.getElementById("ticket_count").value;
+            if(a<1)
+            {
+                alert("PLEASE SELECT VALID NUMBER OF TICKETS.")
+            }
+            else{
+                var b = 100;
+                var c = 18/100;
+                var d = ((a*b)*c)*10;
+                var result = d.toFixed(2);
+                // alert("Your ticket rate"+" "+result);
+                document.getElementById("bill").style.display="block";
+                document.getElementById("print").style.display="block";
+                document.getElementById("bill").innerHTML="YOUR TICKET COUNT :"+" "+a+"<br>"+"GST PRICE :"+" "+c+"<br>"+"TICKET RATE :"+" "+result;
+                document.getElementById("ticket_count").value=" ";
+            } 
+        }
+        function cancelshow()
+        {
+            document.getElementById("bill").style.display="none";
+            document.getElementById("print").style.display="none";
+        }
+        function print_ticket(divName)
+        {
+            var printContents = document.getElementById(divName).innerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = printContents;
+
+			window.print();
+
+			document.body.innerHTML = originalContents;
+            // window.print();
+        }
+    </script>
+
+</body>
+</html>

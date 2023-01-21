@@ -1,0 +1,230 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Movies.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="navbar">
+        <h1 style="line-height: 2.5rem;color: white;margin-left: 5%;float: left;">Movie Universe</h1>
+        <ul class="frst-ul">
+            <li class="frst-li"><a  class="frst-a" onclick="callHome()" style="cursor: pointer;">HOME</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">ABOUT</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">CONTACT</a></li>
+            <li class="frst-li"><a href="#" class="frst-a">HELP</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <label id="greetings" align="center"></label><br>
+        <label id="login" style="float:right;margin-right: 3%;font-family: Gabriola;letter-spacing: 2px;cursor: pointer;color: #F2A359;" onclick="callHome()"></label>
+        <div style="height: 500px;width: 100%;background-color: transparent;display: flex;">
+            <div style="height: 400px;width: 25%;background-color: transparent;padding: 2rem;float: left;">
+                <!-- /////////////////////////////////////////////// -->
+                <div class="image">
+                    <img src="spider.jpg" alt="" class="image__img">
+                    <div class="image__overlay">
+                        <div class="image__title">
+                            <p class="image__description">
+                                <span style="font-weight: bolder;font-size: 2rem;">Movie Name :</span>
+                                <br>
+                            <b style="font-size: 2rem;color: #f86624;align-content: center;"> SPIDER-MAN NO WAY HOME </b>
+                            <br>
+                            <span style="font-weight: bolder;">Director: 
+                            </span>Jon Watts
+                            <br>
+                            <span style="font-weight:bolder;"> Production companies:</span> Columbia Pictures, Marvel Studios, Pascal Pictures
+                            <br>
+                            <button class="image__btn" onclick="callspider()">BOOK MY SHOW</button>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////// -->
+            </div>
+            <div style="height: 400px;width: 25%;background-color: transparent;padding: 2rem;margin-left: 6%;">
+                <!-- /////////////////////////////////////////////// -->
+                <div class="image">
+                    <img src="civil.jpg" alt="" class="image__img">
+                    <div class="image__overlay">
+                        <div class="image__title">
+                            <p class="image__description">
+                                <span style="font-weight: bolder;font-size: 2rem;">Movie Name :</span>
+                                <br>
+                                <b style="font-size: 2rem;color: #f86624;align-content: center;"> CIVIL WAR </b>
+                            <br>
+                            <span style="font-weight: bolder;">Director: 
+                            </span>Anthony Russo, Joe Russo
+                            <br>
+                            <span style="font-weight:bolder;"> Production companies:</span> Marvel Entertainment, Marvel Studios.
+                            <br>
+                            <button class="image__btn"  onclick="callcivil()">BOOK MY SHOW</button>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////// -->
+            </div>
+            <div style="height: 400px;width: 25%;background-color: transparent;padding: 2rem;margin-left: 6%;">
+                <!-- /////////////////////////////////////////////// -->
+                <div class="image">
+                    <img src="frozen.jpg" alt="" class="image__img">
+                    <div class="image__overlay">
+                        <div class="image__title">
+                            <p class="image__description">
+                            <span style="font-weight: bolder;font-size: 2rem;">Movie Name :</span>
+                            <br>
+                            <b style="font-size: 2rem;color: #f86624;align-content: center;"> FROZEN </b>
+                            <br>
+                            <span style="font-weight: bolder;">Director: 
+                            </span> Chris Buck, Jennifer Lee, Stevie Wermers, Kevin Deters
+                            <br>
+                            <span style="font-weight:bolder;"> Production companies:</span> Walt Disney Pictures, Walt Disney Animation Studios
+                            <br>
+                            <button class="image__btn"  onclick="callfrozen()">BOOK MY SHOW</button>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////// -->
+            </div>
+        </div>
+
+        <!-- ////////////////////////////////////////////////////////////SECOND HALF////////////////////////////////////////////////////////////////////////////////////// -->
+        <div style="height: 500px;width: 100%;background-color: transparent;display: flex;">
+            <div style="height: 400px;width: 25%;background-color: transparent;padding: 2rem;float: left;">
+                <!-- /////////////////////////////////////////////// -->
+                <div class="image">
+                    <img src="fifty.jpg" alt="" class="image__img">
+                    <div class="image__overlay">
+                        <div class="image__title">
+                            <p class="image__description">
+                                <span style="font-weight: bolder;font-size: 2rem;">Movie Name :</span>
+                                <br>
+                                <b style="font-size: 2rem;color: #f86624;align-content: center;"> FIFTY SHADES OF GREY </b>
+                                <br>
+                            <span style="font-weight: bolder;">Director: 
+                            </span>James Foley, Sam Taylor-Johnson
+                            <br>
+                            <span style="font-weight:bolder;"> Production companies:</span>Perfect World Pictures, Focus Features, Trigger Street Productions, Michael De Luca.
+                            <br>
+                            <button class="image__btn"  onclick="callfifty()">BOOK MY SHOW</button>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////// -->
+            </div>
+            <div style="height: 400px;width: 25%;background-color: transparent;padding: 2rem;margin-left: 6%;">
+                <!-- /////////////////////////////////////////////// -->
+                <div class="image">
+                    <img src="money.jpg" alt="" class="image__img">
+                    <div class="image__overlay">
+                        <div class="image__title">
+                            <p class="image__description">
+                                <span style="font-weight: bolder;font-size: 2rem;">Movie Name :</span>
+                                <br>
+                                <b style="font-size: 2rem;color: #f86624;align-content: center;"> MONEY HEIST </b>
+                                <br>
+                            <span style="font-weight: bolder;">Director: 
+                            </span>Álex Pina
+                            <br>
+                            <span style="font-weight:bolder;"> Production companies:</span> Vancouver Media,Atresmedia.
+                            <br>
+                            <button class="image__btn"  onclick="callmoney()">BOOK MY SHOW</button>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////// -->
+            </div>
+            <div style="height: 400px;width: 25%;background-color: transparent;padding: 2rem;margin-left: 6%;">
+                <!-- /////////////////////////////////////////////// -->
+                <div class="image">
+                    <img src="sita.jpg" alt="" class="image__img">
+                    <div class="image__overlay">
+                        <div class="image__title">
+                            <p class="image__description">
+                                <span style="font-weight: bolder;font-size: 2rem;">Movie Name :</span>
+                                <br>
+                                <b style="font-size: 2rem;color: #f86624;align-content: center;"> SITA RAMAM</b>
+                                <br>
+                            <span style="font-weight: bolder;">Director: 
+                            </span> Hanu Raghavapudi
+                            <br>
+                            <span style="font-weight:bolder;"> Production companies:</span>Lyca Productions, Pen India Limited, Annapurna Studios
+                            <br>
+                            <button class="image__btn"  onclick="callsita()">BOOK MY SHOW</button>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ////////////////////////////////////////////////// -->
+            </div>
+        </div>
+
+        <!-------------------------------------------- Next section starts here------------------------------->
+        <div style="height: 0.01rem;width: 80%;background-color: orange;margin: auto;"></div>
+        <h1 style="color: #ffff;" align="center">UPCOMING MOVIES ....</h1>
+        <marquee behavior="" direction="" scrollamount="20" style="display: flex;">
+            
+                <img src="varisu.jpg" class="img-1-slid" >
+                <img src="poniyin.jpeg" class="img-1-slid" style="margin-left: 10%;">
+        </marquee>
+    <input id="search" type="search" placeholder="Enter Movie Names to search...." onkeyup="search_movie()">
+   
+    </div>
+    <div>
+        
+        <a href="Sign_in.html">Back to Sign-in</a>
+        &nbsp;&nbsp;
+        <a href="Sing_up.html">Back to Sign-up</a>
+    </div>
+    <script>
+        var name = sessionStorage.getItem("name");
+        document.getElementById('greetings').innerHTML="WELCOME TO UNIVERSE OF MOVIES,"+" "+name;
+        document.getElementById('login').innerHTML='YOU LOGGED IN AS'+" "+name;
+        function callHome()
+        {
+            let a=alert('You want to move to Home!!');
+            if(a=true)
+            {
+                window.location.href='Home_Page.html';
+            }
+        }
+
+        function callspider()
+        {
+            window.location.href="Spider.html";
+        }
+        function callcivil()
+        {
+            window.location.href="civil.html";
+        }
+        function callfrozen()
+        {
+            window.location.href="Frozen.html";
+        }
+        function callfifty()
+        {
+            window.location.href="fifty.html";
+        }
+        function callmoney()
+        {
+            window.location.href="Money.html";
+        }
+        function callsita()
+        {
+            window.location.href="sita.html";
+        }
+
+</script>
+</body>
+</html>

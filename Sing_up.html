@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="Sign_up.css">
+</head>
+<body style="overflow: hidden;">
+    <div style="background-color: #FFD36E;height: 80vh;width: 100%;">
+        <div class="container">
+            <div style="height: 2rem;width: 100%;display: none;" id="alert_div">
+                <h1 style="font-size: 1.2rem;color: green;padding-top: 1.5%;" align="center">You Successfully Logged in...</h1> 
+            </div>
+            <h1 align="center" style="font-family: Gabriola;letter-spacing: 3px;">SIGN UP PAGE</h1>
+            <marquee behavior="" direction="" style="font-family: papyrus;">If you new to this universe of movie page, please give your data to our page and continue booking the tickets with pleasure. The datas given to our page was highly safe and secure...</marquee>
+            <div class="cont-1">
+                <img src="Theatre-3.jpg" alt="Welcome Image" class="img">
+            </div>
+            <div class="cont-2">
+                <form  id="sign_up_form">
+                    <div style="height: 430px;width: 48%;float: left;display:block;margin-top: 3%;border: 1px solid red;border-radius: 0rem 8rem 0rem 4rem;">
+                        <h3 align="center" style="font-style: italic;font-family: Garamond;">SELF &nbsp;DETAILS :</h3>
+                        <input type="text" name="name" id="name" placeholder="Your name" required class="input">
+                        <input type="email" name="email" id="email" placeholder="email@gmail.com" required class="input">
+                        <input type="tel" name="phone" id="phone" placeholder="mobile_number" required class="input" >
+                        <input type="number" name="number" id="age" placeholder="Your Age" required class="input">
+                        <br><br>
+                        <label style="font-size: 1.2rem;margin-left: 10%;">Gender :</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="gender" id="Male" value="Male" placeholder="Male" required><label>Male</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="radio" name="gender" id="Female" value="Female" placeholder="Male" required><label>Female</label>
+                        <textarea name="address" id="address" cols="40" rows="5" style="margin-left: 9%;margin-top: 5%;background-color: lavenderblush;" placeholder="Enter Your Address Details..."></textarea>
+                    </div>
+
+                    <div style="height: 430px;width: 45%;float: left;margin-top: 3%;border: 1px solid red;margin-left: 3%;border-radius: 8rem 0rem 8rem 0rem;">
+                        <h3 align="center" style="font-style: italic;font-family: Garamond;">SET YOUR CREDENTIALS :</h3>
+                        <input type="text" name="username" id="username" placeholder="Username" required class="input">
+                        <input type="password" name="password" id="password" placeholder="password" required class="input">
+                    
+                    </div>
+
+                    <a href="Home_Page.html" style="margin-left: 20%;">Back to Home Page</a>
+                    <input type="submit" name="submit" id="submit" onclick="callmovie()">
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #FFD36E;">
+        <div class="custom-shape-divider-bottom-1673256107">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script>
+        function callmovie()
+        {
+            var name = document.getElementById('username').value.toUpperCase();
+            var len = name.length;
+            
+            sessionStorage.setItem("name", name);
+            
+        }
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyBiF0mQ-__No9AijI5_re8EBtVx1RD-KnY",
+            authDomain: "movie-ticket-booking-sys-f72bb.firebaseapp.com",
+            databaseURL: "https://movie-ticket-booking-sys-f72bb-default-rtdb.firebaseio.com",
+            projectId: "movie-ticket-booking-sys-f72bb",
+            storageBucket: "movie-ticket-booking-sys-f72bb.appspot.com",
+            messagingSenderId: "417739684097",
+            appId: "1:417739684097:web:e87484aaaba586e3c58300"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var Sign_up_Data = firebase.database().ref("sign_up_form");
+
+        document.getElementById('sign_up_form').addEventListener("submit",call_firebase)
+
+        function call_firebase(e)
+        {
+            e.preventDefault();
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            const mobile = document.getElementById("phone").value;
+            var age = document.getElementById("age").value;
+            if(document.getElementById("Male").checked)
+            {
+                var gender = document.getElementById("Male").value;
+                // alert(gender);
+            }
+            else
+            {
+                var gender = document.getElementById("Female").value;
+                // alert(gender);
+            }
+            
+            var address = document.getElementById("address").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            save_to_db(name,email,mobile,age,gender,address,username,password);
+            document.getElementById('sign_up_form').reset();
+            setInterval(show_alert(),8000);
+            window.location.href="Movies.html";
+        }
+
+        function show_alert()
+        {
+            document.getElementById('alert_div').style.display='block';
+        }
+
+        const save_to_db = (name,email,mobile,age,gender,address,username,password) =>
+        {
+            var final_data = Sign_up_Data.push()
+
+            final_data.set(
+                {
+                    name: name,
+                    Email: email,
+                    Contact: mobile,
+                    Age: age,
+                    Gender: gender,
+                    Address: address,
+                    Username: username,
+                    Password: password,
+                }
+            )
+        }
+
+    </script>
+</body>
+</html>

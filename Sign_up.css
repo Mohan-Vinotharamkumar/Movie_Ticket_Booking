@@ -1,0 +1,55 @@
+.container
+{
+    height: 700px;
+    width: 100%;
+    /* background-color: aqua; */
+}
+.cont-1
+{
+    height: 500px;
+    width: 45%;
+    float: left;
+    /* background-color: bisque; */
+    display: flex;
+}
+.cont-2
+{
+    height: 500px;
+    width: 55%;
+    float: right;
+    /* background-color: blue; */
+}
+.img
+{
+    height: 400px;
+    width: 70%;
+    margin: auto;
+    border-radius: 9rem 0rem 10rem 0rem;
+    cursor: pointer;
+}
+#submit
+{
+    height: 2rem;
+    width: 30%;
+    margin-left: 25%;
+    cursor: pointer;
+    margin-top: 2%;
+}
+.input
+{
+    height: 2rem;
+    width: 80%;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid lavenderblush;
+    background: transparent;
+    margin-top: 5%;
+    padding-left: 10%;
+    margin-left: 10%;
+    font-size: 1rem;
+}
+.input::placeholder
+{
+    letter-spacing: 2px;
+    padding-left: 20%;
+}
